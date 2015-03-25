@@ -1,0 +1,27 @@
+<h1>CreatureLocations#index</h1>
+
+<%= link_to "New Creature Location", new_creature_location_path %>
+
+<table width="100%">
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @creature_locations.each do |creature_location| %>
+    <tr>
+      <td><%=  %></td>
+      <td><%=  %></td>
+      <td><%=  %></td>
+      <td><%=  %></td>
+      <td><%=  %></td>
+      <td><%= link_to "Show", creature_location_path(creature_location.id) %></td>
+      <td><%= link_to "Update", edit_creature_location_path(creature_location.id) %></td>
+      <td><%= link_to "Destroy", creature_location_path(creature_location.id), :method => :delete, :data => { :confirm => "Are you sure?" } %> 
+      </td>
+    </tr>
+  <% end %>
+</table>

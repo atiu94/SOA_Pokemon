@@ -1,0 +1,10 @@
+<%= simple_form_for @creature do |f| %>
+
+    <%= f.input :name %>
+    <%= f.input :element, :as => :select, :collection => Creature::TYPES %>
+    <%= f.input :description %>
+    <%= f.input :hit_point %>
+    <%= f.hidden_field :creature_id %> 
+
+    <%= f.button :submit, "Create" %>
+<% end %>

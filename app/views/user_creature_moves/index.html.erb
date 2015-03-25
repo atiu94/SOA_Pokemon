@@ -1,0 +1,27 @@
+
+
+<%= link_to "New User Creature Move", new_user_creature_move_path %>
+
+<table width="100%">
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @user_creature_moves.each do |user_creature_move| %>
+    <tr>
+      <td><%= %></td>
+      <td><%= %></td>
+      <td><%= %></td>
+      <td><%= %></td>
+      <td><%= %></td>
+      <td><%= link_to "Show", user_creature_move_path(user_creature_move.id) %></td>
+      <td><%= link_to "Update", edit_user_creature_move_path(user_creature_move.id) %></td>
+      <td><%= link_to "Destroy", user_creature_move_path(user_creature_move.id), :method => :delete, :data => { :confirm => "Are you sure?" } %> 
+      </td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,11 @@
+
+<%= simple_form_for @move do |f| %>
+
+    <%= f.input :name %>
+    <%= f.input :power_point %>
+    <%= f.input :damage %>
+    <%= f.input :element, :as => :select, :collection => Move::TYPES %>
+    <%= f.hidden_field :move_id %> 
+
+    <%= f.button :submit, "Create" %>
+<% end %>

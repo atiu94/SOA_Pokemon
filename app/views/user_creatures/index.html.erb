@@ -1,0 +1,27 @@
+
+
+<%= link_to "New User Creature", new_user_creature_path %>
+
+<table width="100%">
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @user_creatures.each do |user_creature| %>
+    <tr>
+      <td><%=  %></td>
+      <td><%=  %></td>
+      <td><%=  %></td>
+      <td><%=  %></td>
+      <td><%=  %></td>
+      <td><%= link_to "Show", user_creature_path(user_creature.id) %></td>
+      <td><%= link_to "Update", edit_user_creature_path(user_creature.id) %></td>
+      <td><%= link_to "Destroy", user_creature_path(user_creature.id), :method => :delete, :data => { :confirm => "Are you sure?" } %> 
+      </td>
+    </tr>
+  <% end %>
+</table>

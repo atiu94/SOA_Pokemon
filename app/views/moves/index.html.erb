@@ -1,0 +1,25 @@
+
+
+<%= link_to "New Move", new_move_path %>
+
+<table width="100%">
+  <tr>
+    <th>Name</th>
+    <th>Power Point</th>
+    <th>Damage</th>
+    <th>Element</th>
+  </tr>
+
+  <% @moves.each do |move| %>
+    <tr>
+      <td><%= move.name %></td>
+      <td><%= move.power_point %></td>
+      <td><%= move.damage %></td>
+      <td><%= move.element %></td>
+      <td><%= link_to "Show", move_path(move.id) %></td>
+      <td><%= link_to "Update", edit_move_path(move.id) %></td>
+      <td><%= link_to "Destroy", move_path(move.id), :method => :delete, :data => { :confirm => "Are you sure?" } %> 
+      </td>
+    </tr>
+  <% end %>
+</table>

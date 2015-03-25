@@ -1,0 +1,2 @@
+module UserCreaturesHelper
+end
