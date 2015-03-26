@@ -1,8 +1,22 @@
-<h1>Movements#index</h1>
-<p>Find me in app/views/movements/index.html.erb</p>
+<h1></h1>
+
 
 <u1>
 <center>
 	<%= @message %>
+	<h1><%= @text %></h1>
   <%= @current_status_code %>
 </u1>
+
+<h2>
+You are in a vast wilderness. What do you do?
+</h2>
+
+
+<form action = "/movements/move">
+   Command:
+   <br>
+    <%= text_field_tag(:roomno) %>
+   <br>
+   <%= submit_tag "Submit" %>
+</form>

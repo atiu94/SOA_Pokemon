@@ -7,7 +7,7 @@ class MovementsController < ApplicationController
     before_action :set_details
 
     SERVER_BASE_URL = "http://localhost:1337/" #Creating a const variable for web location
-    #current_status_code = 0
+    #current_status_code =
 
     def index
       #parameters setup
@@ -28,8 +28,10 @@ class MovementsController < ApplicationController
 
       payload = response.body
 
-      @current_state_code = JSON.parse(payload)['status']
-      @message = JSON.parse(payload)['message']
+      @text = payload
+
+      #@current_state_code = JSON.parse(payload)['status']
+      #@message = JSON.parse(payload)['message']
     end
 
     def move
