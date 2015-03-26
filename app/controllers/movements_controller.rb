@@ -1,4 +1,5 @@
 class MovementsController < ApplicationController
+    before_action :authenticate_user!
 
     require 'json' # Rails lib for JSON data handling
     require 'net/http' # Rails Lib for web manipulation
@@ -11,7 +12,7 @@ class MovementsController < ApplicationController
 
     def index
       #parameters setup
-      location = "#{SERVER_BASE_URL}Room1" # Takes us to the teacher's app entrypoint at Room1
+      location = "#{SERVER_BASE_URL}" # Takes us to the teacher's app entrypoint at Room1
       uri = URI.parse(location)
 
       # Setting up JSON datagram
@@ -37,7 +38,7 @@ class MovementsController < ApplicationController
     def move
       uri = URI.parse(@location)
 
-      reply = {'name' => @name , 'command' => @command , 'state' => @current_state_code}
+      reply = {'command' => @command , 'state' => @current_state_code}
       reply_headers = {"Content-Type" => "application/json",
          "Accept" => "application/json"}
 
@@ -57,7 +58,7 @@ class MovementsController < ApplicationController
     def command_form
       uri = URI.parse(@location)
 
-      reply = {'name' => @name , 'command' => @command , 'state' => @current_state_code}
+      reply = {'command' => @command , 'state' => @current_state_code}
       reply_headers = {"Content-Type" => "application/json",
          "Accept" => "application/json"}
 
@@ -74,7 +75,6 @@ class MovementsController < ApplicationController
     end
 
     def set_details
-      @name = 'Regine'
       #@command = params[:command]
          @command = "look"
       @room = params[:roomno]
